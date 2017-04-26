@@ -1,0 +1,43 @@
+#
+# For a description of the syntax of this configuration file,
+# see the file kconfig-language.txt in the NuttX tools repository.
+#
+
+config DYNAMIXEL
+	bool "dynamixel motor"
+	default n
+	---help---
+		Enable the timer example
+
+if DYNAMIXEL
+
+config DYNAMIXEL_APPNAME
+	string "Executable name"
+	default "dynamixel"
+	depends on NSH_BUILTIN_APPS
+	---help---
+		This is the name of the built-in application
+
+config DYNAMIXEL_STACKSIZE
+	int "Dynamixel stack size"
+	default 2048
+	depends on NSH_BUILTIN_APPS
+	---help---
+		This is the stack size allocated when the dynamixel task runs
+
+config DYNAMIXEL_PRIORITY
+	int "Dynamixel task priority"
+	default 100
+	depends on NSH_BUILTIN_APPS
+	---help---
+		This is the priority of the timer task
+
+config DYNAMIXEL_PROGNAME
+	string "Dynamixel program name"
+	default "dynamixel"
+	depends on BUILD_KERNEL
+	---help---
+		This is the name of the program that will be use when the NSH ELF
+		program is installed.
+
+endif

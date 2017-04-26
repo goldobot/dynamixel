@@ -1,0 +1,8 @@
+############################################################################
+# apps/dynamixel/Make.defs
+# Adds selected applications to apps/ build
+############################################################################
+
+ifeq ($(CONFIG_DYNAMIXEL),y)
+CONFIGURED_APPS += dynamixel
+endif
