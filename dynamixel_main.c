@@ -510,22 +510,21 @@ void correctPosition(int id,int currentPos,int goalPos,int maxPos){
     
 }
 int checkMove(void){
-        int maxPos = 1024;
 	movingLoad();
 	if (pos1 != GetPosition(id1)){
 	printf("Error on servo 1\n");
-        correctPosition(id1,GetPosition(id1),pos1, maxPos);
+        correctPosition(id1,GetPosition(id1),pos1, 4095);
 	return 0;}
 	if (pos2 != GetPosition(id2)){
 	printf("Error on servo 2\n");
-        correctPosition(id2,GetPosition(id2),pos2, maxPos);
+        correctPosition(id2,GetPosition(id2),pos2, 4095);
 	return 0;}
 	if (pos3 != GetPosition(id3)){
 	printf("Error on servo 3\n");
-        correctPosition(id3,GetPosition(id3),pos3, maxPos);
+        correctPosition(id3,GetPosition(id3),pos3, 1023);
 	return 0;}
 	if (pos4!= GetPosition(id4)){
-        correctPosition(id4,GetPosition(id4),pos4, maxPos);
+        correctPosition(id4,GetPosition(id4),pos4, 1023);
 	printf("Error on servo 4\n");
 	return 0;}
 	return 1;
